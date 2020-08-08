@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+/*--- Display : Mobile ---*/
+@media screen and (max-width: 767px) {
+  .message {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 540px;
+    background-image: url(../images/img_bg_contact.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 80px;
+  }
+
+  .message-inner {
+    margin: 0 20px;
+    display: block;
+  }
+
+  .message div p {
+    text-align: center;
+    font-size: 19px;
+    line-height: 2;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+
+  .message div p br {
+    display: none;
+  }
+
+  .cta {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  button.cta-btn {
+    width: 100%;
+    max-width: 334px;
+    padding: 15px 15px;
+    border: 1px solid #BFA94D;
+    border-radius: 50px 50px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #BFA94D;
+    background-color: #ffffffdd;
+  }
+
+  .tel {
+    margin-bottom: 20px;
+  }
+
+  .map {
+    position: relative;
+    width:100%;
+    padding-top: 80%;
+    margin-bottom: 30px;
+  }
+
+  .map iframe{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .access {
+    margin-bottom: 60px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .access p {
+    margin-bottom: 20px;
+  }
+
+  .access p span {
+    font-weight: 700;
+  }
+
+}
+
+
+/*--- Display : PC ---*/
+@media screen and (min-width: 768px) {
+  .message {
+    display: flex;
+      justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 560px;
+    background-image: url(../images/img_bg_contact.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 120px;
+  }
+
+  .message-inner {
+    display: block;
+    width: 90%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .message div p {
+    text-align: center;
+    font-size: 27px;
+    line-height: 2;
+    font-weight: 700;
+    margin-bottom: 72px;
+  }
+
+  .cta {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  button.cta-btn {
+    width: 520px;
+    padding: 25px 25px;
+    border: 1px solid #BFA94D;
+    border-radius: 50px 50px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #BFA94D;
+    background-color: #ffffffdd;
+  }
+
+  button.cta-btn:hover {
+    color: #ffffff;
+    background-color: #BFA94D;
+  }
+
+  .tel {
+    margin-bottom: 27px;
+  }
+
+  .map {
+    position: relative;
+    width: 100%;
+    padding-top: 33%;
+  }
+
+  .map iframe {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .access {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 36px;
+    margin-bottom: 120px;
+    font-size: 14px;
+    text-align: justify;
+    line-height: 1.5;
+  }
+
+  .access p span {
+    font-weight: 700;
+  }
+
+  .col2 {
+    width: 48.6%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1296px) {
+  .wrap {
+    margin: auto 40px;
+  }
+}
