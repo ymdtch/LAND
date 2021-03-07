@@ -20,13 +20,6 @@
   text-align: center;
 }
 
-.lazyload{
- opacity: 0;
-}
-.lazyloaded{
-  opacity: 1;
-  transition: all 0.5s;
-}
 
 body a[target="_blank"]:not(.sns)::after{
   font-family: "Font Awesome 5 Free";
@@ -112,6 +105,7 @@ body a[target="_blank"]:not(.sns)::after{
     font-size: 16px;
     font-weight: 500;
     padding: 1.5em 0;
+    letter-spacing: 1px;
     border-bottom: 1px solid #ccc;
     color: #000000;
     text-decoration: none;
@@ -225,6 +219,7 @@ body a[target="_blank"]:not(.sns)::after{
     border-bottom: 1px solid #ccc;
     color: #000000;
     text-decoration: none;
+    letter-spacing: 1px;
   }
 
   .menu ul li.current a {
@@ -312,6 +307,7 @@ body a[target="_blank"]:not(.sns)::after{
     line-height: 20px;
     font-weight: 400;
     text-align: center;
+    letter-spacing: 1px;
     padding: 20px;
   }
 
@@ -429,6 +425,7 @@ body a[target="_blank"]:not(.sns)::after{
   .footer-nav-list a, .footer-nav-list ul li a {
     color: white;
     text-decoration: none;
+    letter-spacing: 1px;
   }
 
   .footer-nav-list span {

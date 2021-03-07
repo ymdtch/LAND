@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     width: 100vw;
-    height: 540px;
+    height: 720px;
     background-image: url(../images/img_bg_contact.jpg);
     background-size: cover;
     background-position: center;
@@ -30,16 +30,17 @@
     display: none;
   }
 
-  .cta {
+  .message-inner .cta {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    padding: 15px 15px;
   }
 
-  button.cta-btn {
+  .message-inner a.cta-btn {
     width: 100%;
     max-width: 334px;
-    padding: 15px 15px;
+    padding: 15px 30px;
     border: 1px solid #BFA94D;
     border-radius: 50px 50px;
     font-size: 15px;
@@ -54,12 +55,12 @@
 
   .map {
     position: relative;
-    width:100%;
+    width: 100%;
     padding-top: 80%;
     margin-bottom: 30px;
   }
 
-  .map iframe{
+  .map iframe {
     display: block;
     position: absolute;
     top: 0;
@@ -82,18 +83,16 @@
   .access p span {
     font-weight: 700;
   }
-
 }
-
 
 /*--- Display : PC ---*/
 @media screen and (min-width: 768px) {
   .message {
     display: flex;
-      justify-content: center;
+    justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 560px;
+    height: 800px;
     background-image: url(../images/img_bg_contact.jpg);
     background-size: cover;
     background-position: center;
@@ -116,14 +115,14 @@
   }
 
   .cta {
+    padding: 25px 25px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
   }
 
-  button.cta-btn {
-    width: 520px;
-    padding: 25px 25px;
+   a.cta-btn {
+    padding: 25px 50px;
     border: 1px solid #BFA94D;
     border-radius: 50px 50px;
     font-size: 18px;
@@ -132,12 +131,12 @@
     background-color: #ffffffdd;
   }
 
-  button.cta-btn:hover {
+  .message-inner a.cta-btn:hover {
     color: #ffffff;
     background-color: #BFA94D;
   }
 
-  .tel {
+  .message-inner .tel {
     margin-bottom: 27px;
   }
 

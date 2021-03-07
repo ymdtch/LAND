@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/about.css">
+  <link rel="preload" href="../images/img_philosophy.png" as="image">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -20,7 +21,7 @@
     <nav>
       <div class="drawer">
         <!--- いわゆるロゴ svg を利用------>
-        <div id="logo"><a href="../index.html"><img src="../images/land_logo.svg" alt="" /></a></div>
+        <div id="logo"><a href="../index.html"><img loading=lazy src="../images/land_logo.svg" alt="" /></a></div>
 
         <!-- ハンバーガーメニュー部分 -->
         <div class="Toggle">
@@ -43,7 +44,7 @@
   </header>
 
   <div class="philosophy-image">
-    <img src="../images/img_philosophy.png" alt="">
+    <img loading=lazy src="../images/img_philosophy.png" alt="">
   </div>
 
   <div class="wrap">
@@ -55,15 +56,15 @@
           テクニックで空間・プロダクトをプロデュース、提供する事業を行っているチームです。</p>
       </div>
       <div id="story">
-        <img src="../images/logo_story.svg" alt="">
+        <img loading=lazy src="../images/logo_story.svg" alt="">
         <h1>想いや信念、情熱のこもった行動は感動を呼ぶ</h1>
         <p>スポーツや、接客などのサービス業がそうであるように​、モノ作りにも同じことが言えます。<br>
-          LANDは、ご依頼いただいたクライアントの為に徹底的に意匠、機能、ディテールのクオリティにこだわります。そして、出会い、関係性を大切にする事で、物質的な豊かさとだけでなく、精神的な豊かさをそれぞれが得られることも大切にしています。<br>
+          LANDは、ご依頼いただいたクライアントの為に徹底的に意匠、機能、ディテールのクオリティにこだわります。そして、出会い、関係性を大切にする事で、物質的な豊かさだけでなく、精神的な豊かさをそれぞれが得られることも大切にしています。<br>
           ロゴは企業アイデンティティを表す「図案、人間、出会い、素直」という文字から成り立っています。<br>
       </div>
 
       <div id="founder">
-        <img src="./images/portlait.png" alt="Portlait of Masato Iwashita" class="portlait">
+        <img loading=lazy src="./images/portlait.png" alt="Portlait of Masato Iwashita" class="portlait">
         <div>
           <p class="name"><span>岩下 将人</span> Masato Iwashita</p>
           <p>物心ついた時より父親の影響で、魚図鑑を眺めレゴブロック遊びにいそしむ。経済学部生として、大学時代はアメリカンフットボール部にのめり込み、ゼミにて当時の日本ではほとんど語られなかったブランドの経営資源価値について研究する。
@@ -80,7 +81,7 @@
       <div class="company-outline">
 
         <div class="col2_l">
-          <img src="../images/company_logo.svg" alt="" class="company-logo">
+          <img loading=lazy src="../images/company_logo.svg" alt="" class="company-logo">
           <p>5A VILLA GAIEN , 3-38-16 JINGUMAE<br>
             SHIBUYA- KU , TOKYO<br>
             #150- 0001<br><br>
@@ -93,15 +94,16 @@
 
         <div class="col2_r">
           <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.1975928300535!2d139.71119391525852!3d35.672136380196335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c985a4f77c9%3A0x357394721328826c!2z44CSMTUwLTAwMDEg5p2x5Lqs6YO95riL6LC35Yy656We5a6u5YmN77yT5LiB55uu77yT77yY4oiS77yR77yWIOODtOOCo-ODqeWkluiLkQ!5e0!3m2!1sja!2sjp!4v1594217129855!5m2!1sja!2sjp"
-              allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.1975928300535!2d139.71119391525852!3d35.672136380196335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c985a4f77c9%3A0x357394721328826c!2z44CSMTUwLTAwMDEg5p2x5Lqs6YO95riL6LC35Yy656We5a6u5YmN77yT5LiB55uu77yT77yY4oiS77yR77yWIOODtOOCo-ODqeWkluiLkQ!5e0!3m2!1sja!2sjp!4v1594217129855!5m2!1sja!2sjp"
+              title="map" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
         </div>
 
       </div>
 
       <div class="company-detail">
-        <div class="col2_l">
+        <div>
 
           <span>設立</span><br>
           2015年12月1日<br>
@@ -119,6 +121,7 @@
           みずほ銀行青山支店<br>
 
         </div>
+        <!---
         <div class="col2_r">
           <span>2020</span><br>
           湯布院新築温泉旅館ホテル（仮称）/ 三井不動産 宮下公園再開発プロジェクト / ⾼級温泉旅館 ⽵ふえ2525 / グランピング・カフェ・イベント宿泊施設 WAKKA<br>
@@ -139,7 +142,7 @@
           Anniversal 表参道 / 古我邸 / DEXEE DINNER / eureka AOYAMA / 道の駅 こうざき / PONOS EBISU / JOYCE VINTAGE / マリスカル モデルハウス / りそな銀⾏ MIDTOWN⽀店 / Maison de Reefer<br>
 
         </div>
-
+        -->
 
       </div>
     </div>
@@ -150,7 +153,7 @@
     <div class="footer-wrap">
       <div class="footer-left">
         <div class="logo-footer">
-          <img src="../images/logo_footer.svg" alt="">
+          <img loading=lazy src="../images/logo_footer.svg" alt="">
         </div>
         <p>5A VILLA GAIEN, 3-38-16 JINGUMAE, SHIBUYA-KU, TOKYO<br>
           #150- 0001<br>
@@ -188,8 +191,9 @@
           </div>
 
           <div class="footer-nav-list">
-            <a href="#"><span>WORKS</span></a>
+            <a href="../works/works-index.html"><span>WORKS</span></a>
 
+            <!---
             <ul>
               <li>-&nbsp;&nbsp;<a href="#">OFFICES</a></li>
               <li>-&nbsp;&nbsp;<a href="#">COWORKING</a></li>
@@ -198,24 +202,26 @@
               <li>-&nbsp;&nbsp;<a href="#">ARCHITECTURE</a></li>
               <li>-&nbsp;&nbsp;<a href="#">FURNITURE</a></li>
             </ul>
+            --->
 
           </div>
 
           <div class="footer-nav-list">
-            <a href="#"><span>NEWS</span></a>
+            <a href="../news/news-index.html"><span>NEWS</span></a>
 
+            <!---
             <ul>
               <li>-&nbsp;&nbsp;<a href="#">PRESS RELEASE</a></li>
               <li>-&nbsp;&nbsp;<a href="#">WORKS</a></li>
               <li>-&nbsp;&nbsp;<a href="#">EVENT</a></li>
               <li>-&nbsp;&nbsp;<a href="#">MEDIA / PUBLISHING</a></li>
             </ul>
-
+            --->
 
           </div>
 
           <div class="footer-nav-list">
-            <a href="#"><span>CONTACT</span></a>
+            <a href="../contact/contact.html"><span>CONTACT</span></a>
           </div>
 
         </div>
