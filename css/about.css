@@ -86,8 +86,8 @@
 
   .portlait {
     display: block;
-    width: 135px;
-    height: 180px;
+    width: 180px;
+    height: auto;
     left: 0;
     right: 0;
     margin: auto;
@@ -250,7 +250,7 @@
   .portlait {
     float: right;
     width: 186px;
-    height: 248px;
+    height: auto;
     margin-left: 112px;
   }
 
