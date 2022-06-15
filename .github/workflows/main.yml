@@ -44,8 +44,8 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
+        server: land-interior.sakura.ne.jp
+        username: land-interior
         password: ${{ secrets.FTP_PASSWORD }}
         dry-run: true
 #         protocol: ftps
