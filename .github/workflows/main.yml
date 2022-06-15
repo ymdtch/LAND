@@ -2,20 +2,22 @@ on:
   push:                 
     branches:           
       - deploy-production    
-name: Build and Deploy  
+
+name: 🚀 Deploy website on push
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action     # JOBの名前
-    runs-on: ubuntu-latest      # 仮想環境の種類を指定
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
     steps:
-      - name: 🚚 Get latest code
+    - name: 🚚 Get latest code
       uses: actions/checkout@v2
 
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}:${{ secrets.FTP_PORT }}    
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }} 
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }} 
-          LOCAL_DIR: ./                           
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ${{ secrets.FTP_SERVER }} 
+        username: ${{ secrets.FTP_NAME }} 
+        password: ${{ secrets.FTP_PASSWORD }} 
+        protocol: ftps
+        port: ${{ secrets.FTP_PORT }}  # todo replace with your web hosts ftps port
           REMOTE_DIR: "/home/land-interior/www/website"
