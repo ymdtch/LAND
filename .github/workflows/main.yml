@@ -72,7 +72,9 @@ jobs:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
-          server: ${{ secrets.FTP_SERVER }}:${{ secrets.FTP_PORT }}
+          server: land-interior.sakura.ne.jp
+          port: 22
+          protcol: ftps
           username: land-interior
           password: land0000
           server-dir: "/home/land-interior/www/website/"
