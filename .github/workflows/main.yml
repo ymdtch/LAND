@@ -1,23 +1,48 @@
+# on:
+#   push:                 
+#     branches:           
+#       - deploy-production    
+
+# name: 🚀 Deploy website on push
+# jobs:
+#   web-deploy:
+#     name: 🎉 Deploy
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: 🚚 Get latest code
+#       uses: actions/checkout@v2
+
+#     - name: 📂 Sync files
+#       uses: SamKirkland/FTP-Deploy-Action@4.3.0
+#       with:
+#         server: ${{ secrets.FTP_SERVER }} 
+#         username: ${{ secrets.FTP_USERNAME }} 
+#         password: ${{ secrets.FTP_PASSWORD }} 
+#         protocol: ftps
+#         port: ${{ secrets.FTP_PORT }}  # todo replace with your web hosts ftps port
+#           REMOTE_DIR: "/home/land-interior/www/website"
+          
+          
+          
+name:  Deploy FTP # 名前1（※お好きな名前をつけてください）
 on:
-  push:                 
-    branches:           
-      - deploy-production    
+  push:
+    branches:
+      - deploy-production
 
-name: 🚀 Deploy website on push
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2
+  deploy:
+    name: Build and Deploy # 名前2（※お好きな名前をつけてください）
 
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with:
-        server: ${{ secrets.FTP_SERVER }} 
-        username: ${{ secrets.FTP_USERNAME }} 
-        password: ${{ secrets.FTP_PASSWORD }} 
-        protocol: ftps
-        port: ${{ secrets.FTP_PORT }}  # todo replace with your web hosts ftps port
-          REMOTE_DIR: "/home/land-interior/www/website"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0 
+        with:
+          server: ${{ secrets.FTP_SERVER }}:${{ secrets.FTP_PORT }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: "/home/land-interior/www/website"
