@@ -22,7 +22,7 @@ jobs:
           username: land-interior
           password: land0000
           server-dir: "/home/land-interior/www/website/"
-          protocol: ftps
+          protocol: ftp
           port: 22 # todo replace with your web hosts ftps port
           dry-run: true
           exclude: "[static, **/.**/**, .gitignore,  **/.git/**, **/node_modules/**, **/vendor/**, .editorconfig, README.md, .phpcs.xml.dist, **.json, **.lock, postcss.config.js, **/src/**]"
