@@ -1,103 +1,26 @@
-# name: Deploy via Github Actions to Production
-# on:
-#   push:
-#     branches:
-#       - deploy-production
-#     tags:
-#       - '[0-9]+.[0-9]+.[0-9]*'
-
-# jobs:
-#   test:
-#     name: Deploy to server
-
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - uses: actions/checkout@v2
-
-#       - name: Sync files
-#         uses: SamKirkland/FTP-Deploy-Action@4.3.0
-#         with:
-#           server: land-interior.sakura.ne.jp
-#           username: ${{ secrets.FTP_USERNAME }}
-#           password: ${{ secrets.PASSWORD }}
-#           server-dir: "/home/land-interior/www/website/"
-#           port: ${{ secrets.FTP_PORT }}   # todo replace with your web hosts ftps port
-#           dry-run: true
-#           exclude: "[static, **/.**/**, .gitignore,  **/.git/**, **/node_modules/**, **/vendor/**, .editorconfig, README.md, .phpcs.xml.dist, **.json, **.lock, postcss.config.js, **/src/**]"
-
-# name: 🚀 Deploy website on push
-# on:
-#   push:
-#     branches:
-#       - deploy-production
-#     tags:
-#       - '[0-9]+.[0-9]+.[0-9]*'
-# jobs:
-#   web-deploy:
-#     name: 🎉 Deploy
-#     runs-on: ubuntu-latest
-#     steps:
-#     - name: 🚚 Get latest code
-#       uses: actions/checkout@v2
-
-#     - name: 📂 Sync files
-#       uses: SamKirkland/FTP-Deploy-Action@4.1.0
-#       with:
-#         server: land-interior.sakura.ne.jp
-#         username: land-interior
-#         password: land0000
-# #         port: 22
-# #         protocol: ftps
-#         server-dir: "/home/land-interior/www/website/"
-#         dry-run: true
-#         port: 22 # todo replace with your web hosts ftps port
-
-# name: Deploy via Github Actions to Production
-# on:
-#   push:
-#     branches:
-#       - deploy-production
-
-
-# jobs:
-#   deploy:
-#     name: Deploy to server
-
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - uses: actions/checkout@v2
-
-#       - name: Sync files
-#         uses: SamKirkland/FTP-Deploy-Action@4.1.0
-#         with:
-#           server: land-interior.sakura.ne.jp
-#           username: land-interior
-#           password: land0000
-#           port: 22
-#           protocol: ftp
-#           server-dir: "/home/land-interior/www/website/"
-#           dry-run: true
-
-
+name: Deploy via Github Actions to Production
 on:
-  push:                 
-    branches:           
+  push:
+    branches:
       - deploy-production
-      
-name: Build and Deploy  
+
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action     # JOBの名前
-    runs-on: ubuntu-latest      # 仮想環境の種類を指定
+  test:
+    name: Deploy to server
+
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@master                   
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@1.0.0   
-        env:                                        
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}:${{ secrets.FTP_PORT }}     
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }} 
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }} 
-          LOCAL_DIR: ./                           
-          REMOTE_DIR: "/home/land-interior/www/website/"
+      - uses: actions/checkout@v2
+
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: land-interior.sakura.ne.jp
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}   # todo replace with your web hosts ftps port
+          protocol: ftps
+          server-dir: "/home/land-interior/www/website"
+          dry-run: true
+          exclude: "[static, **/.**/**, .gitignore,  **/.git/**, **/node_modules/**, **/vendor/**, .editorconfig, README.md, .phpcs.xml.dist, **.json, **.lock, postcss.config.js, **/src/**]"
