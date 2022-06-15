@@ -47,7 +47,7 @@ jobs:
         server: land-interior.sakura.ne.jp
         username: land-interior
         password: land0000
-        port: 22
+#         port: 22
 #         protocol: ftps
         server-dir: "/home/land-interior/www/website/"
         dry-run: true
