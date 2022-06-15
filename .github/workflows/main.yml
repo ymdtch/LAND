@@ -46,7 +46,7 @@ jobs:
       with:
         server: land-interior.sakura.ne.jp
         username: land-interior
-        password: ${{ secrets.FTP_PASSWORD }}
+        password: land0000
         dry-run: true
 #         protocol: ftps
 #         port: 22 # todo replace with your web hosts ftps port
