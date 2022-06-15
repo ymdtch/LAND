@@ -53,29 +53,51 @@
 #         dry-run: true
 #         port: 22 # todo replace with your web hosts ftps port
 
-name: Deploy via Github Actions to Production
+# name: Deploy via Github Actions to Production
+# on:
+#   push:
+#     branches:
+#       - deploy-production
+
+
+# jobs:
+#   deploy:
+#     name: Deploy to server
+
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - uses: actions/checkout@v2
+
+#       - name: Sync files
+#         uses: SamKirkland/FTP-Deploy-Action@4.1.0
+#         with:
+#           server: land-interior.sakura.ne.jp
+#           username: land-interior
+#           password: land0000
+#           port: 22
+#           protocol: ftp
+#           server-dir: "/home/land-interior/www/website/"
+#           dry-run: true
+
+
 on:
-  push:
-    branches:
+  push:                 
+    branches:           
       - deploy-production
-
-
+      
+name: Build and Deploy  
 jobs:
-  deploy:
-    name: Deploy to server
-
-    runs-on: ubuntu-latest
-
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action     # JOBの名前
+    runs-on: ubuntu-latest      # 仮想環境の種類を指定
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.1.0
-        with:
-          server: land-interior.sakura.ne.jp
-          username: land-interior
-          password: land0000
-          port: 22
-          protocol: ftp
-          server-dir: "/home/land-interior/www/website/"
-          dry-run: true
+      - uses: actions/checkout@master                   
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@1.0.0   
+        env:                                        
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}:${{ secrets.FTP_PORT }}     
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }} 
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }} 
+          LOCAL_DIR: ./                           
+          REMOTE_DIR: "/home/land-interior/www/website/"
