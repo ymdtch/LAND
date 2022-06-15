@@ -48,7 +48,7 @@ jobs:
         username: land-interior
         password: land0000
         port: 22
-        protocol: ftps
+#         protocol: ftps
         server-dir: "/home/land-interior/www/website/"
         dry-run: true
 #         port: 22 # todo replace with your web hosts ftps port
