@@ -1,7 +1,7 @@
 on:
   push:                 
     branches:           
-      - master    
+      - deploy-production    
 name: Build and Deploy  
 jobs:
   FTP-Deploy-Action:
@@ -12,7 +12,7 @@ jobs:
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@2.0.0   
         env:                                        
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}     
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}:${{ secrets.FTP_PORT }}    
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }} 
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }} 
           LOCAL_DIR: ./                           
