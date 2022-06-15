@@ -26,29 +26,53 @@
 #           dry-run: true
 #           exclude: "[static, **/.**/**, .gitignore,  **/.git/**, **/node_modules/**, **/vendor/**, .editorconfig, README.md, .phpcs.xml.dist, **.json, **.lock, postcss.config.js, **/src/**]"
 
-name: 🚀 Deploy website on push
+# name: 🚀 Deploy website on push
+# on:
+#   push:
+#     branches:
+#       - deploy-production
+#     tags:
+#       - '[0-9]+.[0-9]+.[0-9]*'
+# jobs:
+#   web-deploy:
+#     name: 🎉 Deploy
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: 🚚 Get latest code
+#       uses: actions/checkout@v2
+
+#     - name: 📂 Sync files
+#       uses: SamKirkland/FTP-Deploy-Action@4.1.0
+#       with:
+#         server: land-interior.sakura.ne.jp
+#         username: land-interior
+#         password: land0000
+# #         port: 22
+# #         protocol: ftps
+#         server-dir: "/home/land-interior/www/website/"
+#         dry-run: true
+#         port: 22 # todo replace with your web hosts ftps port
+
+name: Deploy via Github Actions to Production
 on:
   push:
     branches:
       - deploy-production
-    tags:
-      - '[0-9]+.[0-9]+.[0-9]*'
-jobs:
-  web-deploy:
-    name: 🎉 Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2
 
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.1.0
-      with:
-        server: land-interior.sakura.ne.jp
-        username: land-interior
-        password: land0000
-#         port: 22
-#         protocol: ftps
-        server-dir: "/home/land-interior/www/website/"
-        dry-run: true
-#         port: 22 # todo replace with your web hosts ftps port
+
+jobs:
+  deploy:
+    name: Deploy to server
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}:${{ secrets.FTP_PORT }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: "/home/land-interior/www/website/"
