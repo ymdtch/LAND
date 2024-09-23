@@ -1,0 +1,27 @@
+name: Deploy via Github Actions to Production
+on:
+  push:
+    branches:
+      - deploy-production
+
+jobs:
+  test:
+    name: Deploy to server
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get Latest Codes
+        uses: actions/checkout@v2
+
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+#           port: 22   # todo replace with your web hosts ftps port
+#           protocol: ftps
+          server-dir: "/home/land-interior/www/website/"
+          dry-run: true
+          exclude: "[static, **/.**/**, .gitignore,  **/.git/**, **/node_modules/**, **/vendor/**, .editorconfig, README.md, .phpcs.xml.dist, **.json, **.lock, postcss.config.js, **/src/**]"

@@ -364,7 +364,7 @@ body a[target="_blank"]:not(.sns)::after{
     background-position: center;
     background-color: black;
     color: white;
-    height: 360px;
+    height: 480px;
     padding: 72px 72px;
   }
 
